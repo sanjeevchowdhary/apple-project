@@ -71,12 +71,10 @@ df_cluster['Cluster'] = kmeans.labels_
 
 #sort the data by avg of the amount by clusters
 df_cluster_avg = df_cluster.groupby("Cluster")["RPTG_AMT"].mean().sort_values(ascending= False).reset_index()
-print(df_cluster_avg)
 
 #create the Tier column:
 df_cluster_avg["Tiers"] =df_cluster_avg.index + 1
 df_cluster_avg["Tiers"] = 'Tier ' + df_cluster_avg["Tiers"].astype(str)
-print(df_cluster_avg)
 
 #dropping the amount column:
 df_cluster_avg.drop(["RPTG_AMT"],axis = 1 ,inplace= True)
