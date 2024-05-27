@@ -3,6 +3,8 @@ import os
 import sqlite3
 from deep_translator import GoogleTranslator
 
+
+
 fx = 7.16
 
 #defining the required functions:
